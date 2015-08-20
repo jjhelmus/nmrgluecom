@@ -1,0 +1,114 @@
+!!! jhelmus
+<!-- By Jonathan J. Helmus (jjhelmus@gmail.com> --!>
+<div id="contentwide">
+
+<h2>Distance to Dipole Coupling Calculator</h2>
+
+<form name="formdata">
+
+    <p>Distance (in angstroms): 
+    <input type="text" name="dist" /> </p>
+
+    <p>Nucleus 1:  
+    <select size="1" name="nucleus_a">
+        <option selected value="1H">1H</option>
+        <option value="13C">13C</option>
+        <option value="15N">15N</option>
+        <option value="19F">19F</option>
+        <option value="29Si">29Si</option>
+        <option value="31P">31P</option>
+        <option value="107Au">107Au</option>
+        <option value="109Au">109Au</option>
+        <option value="129Xe">129Xe</option>
+        <option value="207Pb">207Pb</option>
+        <option value="7Li">7Li</option>
+    </select>
+
+    <p>Nucleus 2:
+    <select size="1" name="nucleus_b">
+        <option selected value="1H">1H</option>
+        <option value="13C">13C</option>
+        <option value="15N">15N</option>
+        <option value="19F">19F</option>
+        <option value="29Si">29Si</option>
+        <option value="31P">31P</option>
+        <option value="107Au">107Au</option>
+        <option value="109Au">109Au</option>
+        <option value="129Xe">129Xe</option>
+        <option value="207Pb">207Pb</option>
+        <option value="7Li">7Li</option>
+    </select>
+
+    <p><input type="button" value="Calculate dipole" onclick="calculate_dipole();"></p>
+
+    <p><input type="button" value="Calculate distance" onclick="calculate_dist();"></p>
+
+    <p>Dipole-dipole coupling constance (Hz):  
+    <input type="text" name="dipole"/></p>
+
+</form>
+</div>
+
+<script language="JavaScript">
+
+var gamma_table = new Object();
+gamma_table['1H'] =  2.67522e8;
+gamma_table['13C'] = 6.7283e7;
+gamma_table['15N'] = 2.7126e7;
+gamma_table['19F'] = 251.815e6;
+gamma_table['29Si'] = 53.190e6;
+gamma_table['31P'] = 1.08394e8;
+gamma_table['107Au'] = 10.889e6;
+gamma_table['109Au'] = 12.518e6;
+gamma_table['129Xe'] = 74.521e6;
+gamma_table['207Pb'] = 55.805e6;
+gamma_table['7Li'] = 10.3977013e7;
+
+var constant = 1.6784028298433e-12;
+
+function calculate_dipole() {
+
+    var nucleus_a = document.formdata.nucleus_a.value;
+    var nucleus_b = document.formdata.nucleus_b.value;
+    var dist = document.formdata.dist.value;
+
+    var gamma_a = gamma_table[nucleus_a];
+    var gamma_b = gamma_table[nucleus_b];
+
+    var dipole;
+    dipole = constant * (1./(dist*dist*dist)) * gamma_a * gamma_b;
+    dipole = dipole.toPrecision(6);
+
+    if (!isNaN(dipole) && 
+        (dipole != Number.POSITIVE_INFINITY) && 
+        (dipole != Number.NEGATIVE_INFINITY)) { 
+        document.formdata.dipole.value = dipole;
+    }
+    else {
+        document.formdata.dipole.value = 'Invalid distance';
+    }
+}
+
+function calculate_dist() {
+
+    var nucleus_a = document.formdata.nucleus_a.value;
+    var nucleus_b = document.formdata.nucleus_b.value;
+    var dipole = document.formdata.dipole.value;
+
+    var gamma_a = gamma_table[nucleus_a];
+    var gamma_b = gamma_table[nucleus_b];
+
+    var dist;
+    dist = Math.pow(constant * gamma_a * gamma_b / dipole, 1/3);
+    dist = dist.toPrecision(6);
+
+    if (!isNaN(dist) && 
+        (dist != Number.POSITIVE_INFINITY) && 
+        (dist != Number.NEGATIVE_INFINITY)) { 
+        document.formdata.dist.value = dist;
+    }
+    else {
+        document.formdata.dist.value = 'Invalid dipole';
+    }
+}
+</script>
