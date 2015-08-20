@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--- WF --!>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Your description goes here" />
+	<meta name="keywords" content="your,keywords,goes,here" />
+	<meta name="author" content="Your Name" />
+	<link rel="stylesheet" type="text/css" href="1024px.css" title="1024px" media="screen,projection" />
+	<title>nmrglue - A module for working with NMR data in Python.</title>
+</head>
+
+<body>
+<div id="wrap">
+
+	<div id="header">
+		<p id="toplinks"></p>
+		<img src="images/nmrglue_logo.jpg" width="99" height="148" alt="nmrglue logo" class="left" />
+		<h1><a href="index.html">nmrglue</a></h1>
+		<p id="slogan">a module for working with NMR data in Python</p>
+	</div>
+
+	<div id="content">
+
+		<h2>What is nmrglue?</h2>
+		<p>Nmrglue is a module for working with NMR data in Python. 
+		When used with the <a href="httpL//numpy.scipy.org">NumPy</a>, 
+		<a href=http://www.scipy.org">SciPy</a>, and 
+		<a href="http://matplotlib.sourceforge.net/index.html">matplotlib</a>
+		packages nmrglue provides a robust environment for rapidly developing
+	       	new methods for processing, analyzing, and visualizing NMR data. 
+		Nmrglue also provides a framework for connecting existing NMR software packages. 
+		</p>
+		
+		<h2>What can nmrglue do?</h2>
+
+		<p>Nmrglue has the ability to read, write and convert between a number of NMR
+	       	file formats including Agilent/Varian, Bruker, NMRPipe, Sparky, SIMPSON, 
+		Rowland NMR Toolkit files. The files, which are represented in Python as 
+		dictionaries of spectral parameters and 
+		<a href="http://numpy.scipy.org">NumPy</a> ndarray objects, can be easily
+		examined, modified and processed as desired.
+		</p>
+
+		<p>Nmrglue provides a number of functions for processing NMR data such
+		as apodization, spectral shifting, Fourier and other transformations,
+		baseline smoothing and flattening, and linear prediction modeling 
+		and extrapolation. In addition new processing schemes can be implemented easily
+		using the nmrglue provided functions and the multitude of numerical routines 
+		provided by the <a href="http://numpy.scipy.org">NumPy</a> and 
+		<a href="http://scipy.org">SciPy</a> packages.
+		</p>
+
+		<p>When used in conjunction with the <a href="http://matplotlib.sourceforge.net/index.html">matplotlib</a> 
+		(or other) python plotting library nmrglue can be used to create 
+		publication quality figures of NMR spectrum or examine data interactively. 
+		For example: 
+		</p>
+		
+		
+		<img src="images/spectrum_2d.png" width="400" height="300" alt="2D NMR Spectrum" align=center />
+		<img src="images/strip_plots.png" width="400" height="300" alt="NMR Strip Plots" align=center />
+
+		<p>Nmrglue can be used to analysis NMR data, with routines to 
+		perform peak picking, multidimensional lineshape fitting 
+		(peak fitting), and peak integration provided withon the package. 
+		New analysis methods can be rapidly developed and tested in Python
+	       	or by integrating Fortran and C/C++ code. 
+		</p>
+
+		<h2>Installation</h2>
+		
+		<p>nmrglue requires the following packages</p>
+
+		<ul>
+			<li><a href="http://numpy.scipy.org">NumPy</a></li>
+			<li><a href="http:/scipy.org">SciPy</a></li>
+    		 </ul>
+
+		 <p>and the following are recommended (especially if you wish to run the examples):</p>
+		
+		<ul>
+    			<li><a href="http://matplotlib.sourceforge.net/index.html">matplotlib</a></li>
+			<li><a href="http://ipython.org/">IPython</a></li> 
+		</ul>
+
+		<p>To install nmrglue on windows download and run the Windows binary (.exe). 
+		On Linux and OS X download the tar file, extract, and run:</p>
+
+		<p>$ python setup.py install</p> 
+
+		<p>Additional detail on installing nmrglue can be found in the
+		<a href="http://jjhelmus.github.com/nmrglue/current/install.html">Install Guide</a>
+		</p>
+
+		<h2>Documentation</h2>
+		<p>
+		Documentation for nmrglue can be found in the online 
+		<a href="http://jjhelmus.github.com/nmrglue/current/index.html">documentation</a>
+	       	or using Python's built in help system. New users of the package may want to read the
+		<a href="http://jjhelmus.github.com/nmrglue/current/tutorial.html">nmrglue tutorial</a> 
+		to learn about many useful features. A number of
+		<a href="http://jjhelmus.github.com/nmrglue/current/examples/index.html">examples</a> 
+		are also provided for those wishing to see nmrglue is action. The 
+		<a href="http://jjhelmus.github.com/nmrglue/current/reference/index.html">reference guide</a>
+	    may be of use to those needing a detailed information about the functions and
+        classes in nmrglue.  There is also a <a href="https://github.com/jjhelmus/nmrglue/wiki">Wiki</a>
+        for user contributed hints and code snippets.  
+        A <a href="http://www.youtube.com/watch?v=pTxJFvLhHhI">video </a> describing nmrglue is also available from
+        the talk given by Jonathan Helmus at the 2012 SciPy conference.
+		</p>
+        
+        <p>There is also an  
+        <a href=http://link.springer.com/article/10.1007%2Fs10858-013-9718-x>article</a> 
+        in the Journal of Biomolecular NMR on nmrglue.  The examples from this article are 
+        <a href=http://jjhelmus.github.com/nmrglue/current/jbnmr_examples/index.html>available online</a>
+        along with <a href=http://code.google.com/p/nmrglue/downloads/list?q=label:Article-Examples>corresponding data.</a>
+        </p>
+
+        <h2>Citing nmrglue</h2>
+        <p>The <a href=http://link.springer.com/article/10.1007%2Fs10858-013-9718-x>article</a> 
+        describing nmrglue has been published in the Journal of Biomolecular NMR. Please cite nmrglue as:
+        </p>
+                
+        <p>J.J. Helmus, C.P. Jaroniec, Nmrglue: An open source Python package for the analysis of
+        multidimensional NMR data, J. Biomol. NMR 2013, 55, 355-367.
+        <a href=http://dx.doi.org/10.1007/s10858-013-9718-x>[doi]</a>
+        </p>
+
+		<h2>Getting help</h2>
+		<p>
+		Nmrglue has a <a href="http://groups.google.com/group/nmrglue-discuss">mailing list</a> which 
+		you can ask question on and request help.  Also feel free to email the creator of nmrglue, 
+	       	<a href="mailto:jjhelmus@gmail.com">Jonathan J. Helmus</a> directly.	
+		If you want to receive emails when a new version of nmrglue is released 
+		subscribe to the <a href="http://groups.google.com/group/nmrglue-announce">nmrglue-announce</a>
+	       	mailing list. 
+		</p>
+
+		<h2>Contributing</h2>
+		<p>
+		Nmrglue is an open source software package distributed under the 
+		<a href="http://opensource.org/licenses/BSD-3-Clause">New BSD License.</a>  
+		Source code for the package is available on 
+		<a href="http://github.com/jjhelmus/nmrglue">GitHub</a>.  
+		Feature requests and bug reports can be sumbitted to the 
+		<a href="https://github.com/jjhelmus/nmrglue/issues">Issue tracker,</a> posting
+		to the <a href="http://groups.google.com/group/nmrglue-discuss">nmrglue mailing list</a>
+		or contacting Jonathan Helmus directly.	 Contributions of source code or example are 
+		always appreciated from both developers and users.
+	</div>
+
+	<div id="sidebar">
+		<h2>Documentation</h2>
+		<ul>
+			<li><a href="http://nmrglue.readthedocs.org/en/latest/install.html">Install Guide</a></li>
+			<li><a href="http://nmrglue.readthedocs.org/en/latest/tutorial.html">Tutorial</a></li>
+			<li><a href="http://nmrglue.readthedocs.org/en/latest/reference/index.html">Reference Guide</a></li>
+			<li><a href="http://nmrglue.readthedocs.org/en/latest/examples/index.html">Examples</a></li>
+			<li><a href="http://nmrglue.readthedocs.org/en/latest/jbnmr_examples/index.html">JBNMR Examples</a></li>
+            <li><a href="http://nmrglue.readthedocs.org/en/latest/devel/index.html">Developers Guide</a></li>
+            <li><a href="https://github.com/jjhelmus/nmrglue/wiki">Wiki</a></li>
+            <li><a href="http://jjhelmus.github.com/nmrglue/index.html">Older Documentation</a></li>
+		</ul>	
+
+		<h2>Downloads</h2>
+		<ul>
+			<li><a href="https://github.com/jjhelmus/nmrglue/releases">Install Files</a></li>
+            <li><a href="http://code.google.com/p/nmrglue/downloads/list?q=label:Article-Examples">JBNMR Example Data</a></li>
+			<li><a href="http://code.google.com/p/nmrglue/downloads/list?q=label:Example-Data">Data for Examples</a></li>
+			<li><a href="https://drive.google.com/open?id=0BzCZObue1SeERk52WmJfSVdVZWc&authuser=0">Test Data</a></li>
+		</ul>	
+		
+		<h2>Links</h2>
+		<ul>
+			<li><a href="http://github.com/jjhelmus/nmrglue">Source Code</a></li>
+			<li><a href="http://groups.google.com/group/nmrglue-discuss">Mailing List</a></li>
+			<li><a href="https://github.com/jjhelmus/nmrglue/issues">Report Bugs</a></li>
+			<li><a href="./jhelmus/index.html">About the Author</a></li>
+
+		</ul>
+
+	</div>
+
+	<div id="footer">
+		&copy; 2012-2015 <a href="./jhelmus/index.html">Jonathan J. Helmus</a> | Template design by <a href="http://andreasviklund.com/">Andreas Viklund</a></p>
+	</div>
+
+</div>
+</body>
+</html>
