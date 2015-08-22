@@ -37,8 +37,6 @@
 
 <form name="formdata">
 
-    <p>Distance (in angstroms): 
-    <input type="text" name="dist" /> </p>
 
     <p>Nucleus 1:  
     <select size="1" name="nucleus_a">
@@ -70,12 +68,20 @@
         <option value="7Li">7Li</option>
     </select>
 
-    <p><input type="button" value="Calculate dipole" onclick="calculate_dipole();"></p>
+    <table>
+        <tr>
+            <td>Distance (in angstroms):</td>
+            <td><input type="button" value="Calculate dipole --->" onclick="calculate_dipole();"></td>
+            <td>Dipole-dipole coupling (Hz):</td>
+        </tr>
 
-    <p><input type="button" value="Calculate distance" onclick="calculate_dist();"></p>
-
-    <p>Dipole-dipole coupling constance (Hz):  
-    <input type="text" name="dipole"/></p>
+        <tr>
+            <td><input type="text" name="dist" /> </td>
+            <td><input type="button" value="<--- Calculate distance" onclick="calculate_dist();"></td>
+            <td><input type="text" name="dipole"/></td>
+        </tr>
+    </table>
+    <hr />
 
 </form>
 </div>
