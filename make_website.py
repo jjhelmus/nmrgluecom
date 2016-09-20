@@ -7,9 +7,9 @@ import os
 SOURCE_PATH = './source'
 DEST_PATH = './build'
 
-with open('./include/jhelmus_header.html') as f:
+with open('./include/jhelmus_header.html', 'rb') as f:
     JHELMUS_HEADER = f.read()
-with open('./include/jhelmus_footer.html') as f:
+with open('./include/jhelmus_footer.html', 'rb') as f:
     JHELMUS_FOOTER = f.read()
 
 
@@ -35,7 +35,7 @@ def render_page(source, dest):
     # render file
     if directive is None:
         fout.write(fin.read())
-    elif directive == 'jhelmus':
+    elif directive == b'jhelmus':
         fout.write(JHELMUS_HEADER)
         fin.readline()
         fout.write(fin.read())
